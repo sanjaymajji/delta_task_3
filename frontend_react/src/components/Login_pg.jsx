@@ -10,14 +10,13 @@ const Login=()=> {
   const [gender,setgender]= useState();
   const [interest,setinterest]= useState();
   const [password,setpassword]= useState();
-  const [cpassword,setcpassword]= useState();
-  const [score,setscore]=useState()
+  
 
   function confrim_submit (e){
     e.preventDefault()
     
     axios.post("http://localhost:3090/register",{
-      name,gmail,gender,interest,password,cpassword,score
+      name,gmail,gender,interest,password
     }).then((res)=>{
       if(res.data=="done"){
         ship("/")
@@ -62,10 +61,7 @@ const Login=()=> {
       <input type="text" name='password_data' onChange={(e)=>{
         setpassword(e.target.value)
       }}/>
-<label >CONFIRM PASSWORD</label>
-      <input type="text" name='confirm_password_data' onChange={(e)=>{
-        setcpassword(e.target.value)
-      }}/>
+
 
     <button type='submit'>
      
