@@ -1,0 +1,15 @@
+.options{
+    display: flex;
+    justify-content: space-between;
+}
+h3{
+    text-align: center;
+}
+.question{
+    width: 4000px;
+}
+.save{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
