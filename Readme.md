@@ -101,9 +101,3 @@ A feature-rich Quiz application built using the **MERN stack**, offering a user-
 
 ---
 
-## **License**
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
----
-
-This README clearly outlines the app’s features, technologies, setup steps, and future roadmap. Let me know if you'd like additional adjustments!
