@@ -1,113 +1,109 @@
 
 
-<h1>Chat App</h1>
+<h1>Quiz Blitz</h1>
 
-A real-time chat application built using **Socket.IO**, facilitating seamless communication in shared environments and private chat rooms. Designed for scalability, performance, and reliability with modern tools like Docker, NGINX, and Redis.
+A feature-rich Quiz application built using the **MERN stack**, offering a user-friendly interface and robust security mechanisms. The app enables users to create, share, and play quizzes, making it an engaging platform for learning and fun.
 
 ---
 
 ## **Features**
-- Real-time communication using **Socket.IO**.
-- Support for shared chat environments and private chat rooms.
-- Scalable architecture with **horizontal scaling**.
-- Load balancing via **NGINX**, ensuring traffic distribution and fault tolerance.
-- Caching and session management with **Redis** for efficient performance.
+- **User Profiles**: Create and manage personalized profiles.
+- **Create Quizzes**: Users can design and share custom quizzes.
+- **Play Quizzes**: Access and participate in quizzes created by others.
+- **Secure Authentication**: 
+  - **JWT Tokens**: Ensure secure logins and token-based authentication.
+  - **Cookies**: Manage user sessions effectively.
+- **Database**: User and quiz data is securely stored in **MongoDB**.
 
 ---
 
 ## **Technologies Used**
-1. **Socket.IO**: Enables real-time bidirectional communication.
-2. **Docker**: Simplifies deployment with containerized environments.
-3. **NGINX**: Acts as a load balancer, handling traffic distribution and CORS.
-4. **Redis**: Serves as a caching layer and session storage backend.
+
+### **Frontend**
+- **React.js**: Provides an intuitive and dynamic user interface.
+  
+### **Backend**
+- **Node.js**: Manages server-side logic and API endpoints.
+- **Express.js**: Handles routing and middleware efficiently.
+
+### **Database**
+- **MongoDB**: A NoSQL database for secure and scalable data storage.
+
+### **Authentication**
+- **JWT**: Ensures token-based secure login functionality.
+- **Cookies**: Manage sessions for a seamless user experience.
 
 ---
 
 ## **Installation and Setup**
 
 ### Prerequisites
-- Docker installed ([Download Docker](https://www.docker.com/)).
-- Node.js installed ([Download Node.js](https://nodejs.org/)).
-- Redis installed (see instructions below).
+- **Node.js** installed ([Download Node.js](https://nodejs.org/)).
+- **MongoDB** installed locally or use a cloud instance ([MongoDB Atlas](https://www.mongodb.com/cloud/atlas)).
 
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sanjaymajji/chat_app.git
-   cd chat_app
+   git clone <repository_url>
+   cd quiz-app
    ```
-2. Build and run the Docker container:
+2. Install dependencies:
    ```bash
-   docker-compose up --build
+   # For backend
+   cd backend
+   npm install
+
+   # For frontend
+   cd ../frontend
+   npm install
    ```
-3. Access the application at `http://localhost:3000`.
+3. Configure Environment Variables:
+   - Create a `.env` file in the `backend` directory and add:
+     ```env
+     MONGO_URI=<your_mongo_db_connection_string>
+     JWT_SECRET=<your_jwt_secret>
+     PORT=5000
+     ```
+4. Run the Application:
+   - Start the backend server:
+     ```bash
+     cd backend
+     npm start
+     ```
+   - Start the frontend:
+     ```bash
+     cd ../frontend
+     npm start
+     ```
+5. Access the app at `http://localhost:3000`.
 
 ---
 
-## **Redis Installation**
-
-### **For Windows**
-1. Download Redis for Windows from the GitHub repository:
-   [tporadowski/redis/releases](https://github.com/tporadowski/redis/releases).
-2. Extract the files to a folder (e.g., `C:\Redis`).
-3. Add the Redis folder to your system's PATH environment variable:
-   - Open **Control Panel > System > Advanced System Settings > Environment Variables**.
-   - Under **System Variables**, find and edit the `Path` variable.
-   - Add the path to your Redis folder (e.g., `C:\Redis`).
-4. Open Command Prompt and test the installation:
-   ```bash
-   redis-server
-   redis-cli
-   ```
-   You should see the Redis CLI prompt if installed correctly.
-
-### **For Linux**
-1. Update your package list and install Redis:
-   ```bash
-   sudo apt update
-   sudo apt install redis-server
-   ```
-2. Start the Redis server:
-   ```bash
-   sudo systemctl start redis
-   ```
-3. Enable Redis to start on boot:
-   ```bash
-   sudo systemctl enable redis
-   ```
-4. Test the installation:
-   ```bash
-   redis-cli ping
-   ```
-   You should see `PONG` if Redis is running correctly.
+## **Project Architecture**
+- **Frontend**: Handles the UI and communicates with backend APIs.
+- **Backend**: Provides RESTful API endpoints for authentication, quiz creation, and user management.
+- **Database**: Stores user profiles, quizzes, and results in a structured and secure format.
 
 ---
 
-## **Scaling Details**
-- **Vertical Scaling**: Maximize server capacity (e.g., increasing memory).
-- **Horizontal Scaling**: Leverage multiple servers with NGINX for load balancing and Redis for session consistency.
-
----
-
-## **Advanced Usage**
-
-### Docker Commands
-- List running containers: `docker ps`
-- Start a container: `docker start <container_id>`
-- Stop a container: `docker stop <container_id>`
-- Clean up unused images: `docker system prune -a`
-
-### Redis Commands
-- Set key-value pair: `SET key value`
-- Get value: `GET key`
-- Manage lists: `LPUSH listname value`, `LPOP listname`
-- Delete all keys: `FLUSHALL`
+## **Key Highlights**
+- **Responsive Design**: Optimized for devices of all sizes.
+- **Secure Authentication**: Combines JWT and cookies for a robust session management system.
+- **Scalability**: MongoDB ensures the app can handle a growing number of users and quizzes.
 
 ---
 
 ## **Future Enhancements**
-- Expand private chat functionality with advanced security protocols.
-- Implement analytics for chat activity monitoring.
-- Optimize Redis for real-time event tracking.
+- Add leaderboards to track top-performing users.
+- Implement real-time quiz play with WebSocket or Socket.IO.
+- Provide detailed quiz analytics and user progress tracking.
+- Enable social media integration for easy sharing of quizzes.
 
+---
 
+## **License**
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+This README clearly outlines the app’s features, technologies, setup steps, and future roadmap. Let me know if you'd like additional adjustments!
